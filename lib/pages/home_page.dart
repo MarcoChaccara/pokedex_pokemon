@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/db/db_admin.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +14,14 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: (){}, child:  Text("Mostrar data"),),
+            ElevatedButton(
+              onPressed: () {
+                DBAdmin.db.initDatabase();
+              },
+              child: Text(
+                "Mostrar data"
+              ),
+            ),
           ],
         ),
       ),
